@@ -21,19 +21,24 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 //first two are the document paramater as is and the faultyItems div is what list is
     let bananAlert = "Pilot and Copilot feilds need to be names and Fuel Level and Cargo Mass fields need to be Numbers";
     let afr = "ALL Fields Required!"; //1 use
+    let fuelMin = 10000;
+    let cargoMax = 10000;
+    let fuelReady= false;
+    let cargoReady = false; 
 if (/*any value is empty*/pilot===""||copilot===""||fuelLevel===""||cargoLevel===""){alert(afr);}
 else if((!isNaN(pilot))||(!isNaN(copilot))||isNaN(fuelLevel)||isNaN(cargoLevel)){alert(bananAlert);}
 else{//since everyting else on is correct conditions, embed here in c3
-    
-//goal 3 and c3 elseif sofarsogood, assume validation is correct and process comparisons
+if (fuelLevel>fuelMin){fuelReady = true;}
+if (cargoLevel<cargoMax){cargoReady = true;}
     //what if fuel level and cargo are not in range (both <10k, both>10k ,fl>10k,c>10k)
     //before launchstatus besaying ready for launch, what does it mean to be ready for launch?
     //enough fuel, low enough cargo mass basicaly..
+
 //part 3 (update ready n not listis [claimed to be literally most of the code]) 
     // in any of this, list param faulty items becomes visible. with the dom
     // pilot and copilot status text should be updated with a template literal.
  //part 4 (figure out list varriable and indicate list changes and ready status on the page and css with dom)
-    //update the html elements on the page, how? seek book and html tags probably & update color too (red?)
+    //update the html elements on the page, how? seek book and html tags probably & update color too (red or green)
     alert("end of formSubmission function");
 }
 }
