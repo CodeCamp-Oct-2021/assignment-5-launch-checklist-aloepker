@@ -28,10 +28,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    //build with varriables passed in
    //big if/elseif
 
+   alert("variable pass ins work for list: " + list + " & pilot: " + pilot + " & copilot: " + copilot + " & fuel level: " + fuelLevel + " & cargo level: " + cargoLevel)
 
    //c1 error condition: if any value is empty, send simple alert instead. say: "ALL Fields Required"
-   alert("All Fields Required"); 
+
    //select html elemnts first
+
 }//c2 error condition: make sure the data is string or number, use is NaN, send better alert if incorrect
 //c3 elseif sofarsogood, assume validation is correct and process comparisons
 //since everyting else on is correct conditions, embed in c3

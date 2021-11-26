@@ -1,7 +1,7 @@
 // Write your JavaScript code here!
 //use:  preventDefault()
-window.addEventListener("load", function() {
 
+window.addEventListener("load", function() {
  /*  let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse;
@@ -21,10 +21,14 @@ form.addEventListener("submit", function(event) {
     //validate 4 form inputs with dom and conditionals
    //call form submission function to do that
 //   define variables with element values on this page
-   
-   
-   
-    alert("submit clicked");
+let pilotName = document.getElementById('pilotName').value;
+let copilotName = document.getElementById('copilotName').value;
+let fuelLevel = document.getElementById('fuelLevel').value;
+let cargoMass = document.getElementById('cargoMass').value;
+let faultyItems = document.getElementById('faultyItems').value;
+formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass);
+// && list from id: 
+ 
 
 });
    
