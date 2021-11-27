@@ -25,25 +25,36 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let cargoMax = 10000;
     let fuelReady= false;
     let cargoReady = false; 
+    let readyForLaunch =false;
 if (/*any value is empty*/pilot===""||copilot===""||fuelLevel===""||cargoLevel===""){alert(afr);}
 else if((!isNaN(pilot))||(!isNaN(copilot))||isNaN(fuelLevel)||isNaN(cargoLevel)){alert(bananAlert);}
-else{//since everyting else on is correct conditions, embed here in c3
-if (fuelLevel>fuelMin){fuelReady = true;}
+else{if (fuelLevel>fuelMin){fuelReady = true;}
 if (cargoLevel<cargoMax){cargoReady = true;}
-    //what if fuel level and cargo are not in range (both <10k, both>10k ,fl>10k,c>10k)
-    //before launchstatus besaying ready for launch, what does it mean to be ready for launch?
-    //enough fuel, low enough cargo mass basicaly..
-
-//part 3 (update ready n not listis [claimed to be literally most of the code]) 
-    // in any of this, list param faulty items becomes visible. with the dom
-    // pilot and copilot status text should be updated with a template literal.
- //part 4 (figure out list varriable and indicate list changes and ready status on the page and css with dom)
-    //update the html elements on the page, how? seek book and html tags probably & update color too (red or green)
-    alert("end of formSubmission function");
+alert("update lines 1 and 2 with name template literals to start");  //update part 4
+if (cargoReady === false && fuelReady === false){
+    alert("update line3&4");          //update in part 4
+    readyForLaunch = false;
+} else if(cargoReady === false && fuelReady === true){
+    alert("update line4");          //update in part 4
+    readyForLaunch = false;
+}else if(fuelReady === false && cargoReady === true){
+alert("update line3");     //update in part 4
+readyForLaunch = false;
+}else{
+  readyForLaunch = true;
+    alert("ready!");
+}
+if (readyForLaunch)
+{
+    // show ready in green
+}else{
+    //show not ready in red
+}
+    list.style.visibility="visible";
 }
 }
 
-async function myFetch() {   //part 5 last part, somewhat seperate
+async function myFetch() {   //goal 6 & part 5 last part
     let planetsReturned;
 
     planetsReturned = await fetch().then( function(response) {
